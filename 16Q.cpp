@@ -70,4 +70,5 @@ int main() {
 }
 
 //OUTPUT:
-
+Enter the ciphertext: hello
+Decrypted Text: taeeo
