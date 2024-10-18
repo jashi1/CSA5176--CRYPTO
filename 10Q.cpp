@@ -132,4 +132,14 @@ int main() {
 
     return 0;
 }
-
+OUTPUT:-
+Output
+Enter the keyword for Playfair cipher (without spaces): i am a student
+Playfair Matrix:
+I A M S T
+U D E N B
+C F G H K
+L O P Q R
+V W X Y Z
+Enter the plaintext message to encrypt: Standing
+Encrypted Message: TISDUAEH
