@@ -25,3 +25,5 @@ int main() {
     return 0;
 }
 
+OUTPUT:-
+    Decrypted plaintext: D4E6B49F
