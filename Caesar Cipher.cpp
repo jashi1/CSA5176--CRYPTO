@@ -1,38 +1,33 @@
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
-void caesarCipher(char text[], int shift) {
-    int i;
+void caesarCipher(char text[], int k) {
     char ch;
-
-    for (i = 0; text[i] != '\0'; ++i) {
+    int i = 0;
+    while (text[i] != '\0') {
         ch = text[i];
         if (isupper(ch)) {
-            text[i] = (ch + shift - 'A') % 26 + 'A';
+            text[i] = ((ch - 'A' + k) % 26) + 'A';
         }
         else if (islower(ch)) {
-            text[i] = (ch + shift - 'a') % 26 + 'a';
+            text[i] = ((ch - 'a' + k) % 26) + 'a';
         }
+        i++;
     }
 }
 int main() {
     char text[100];
-    int shift;
-    printf("Enter a string to encrypt: ");
+    int k;
+    printf("Enter a message: ");
     fgets(text, sizeof(text), stdin);
-    printf("Enter the shift (1-25): ");
-    scanf("%d", &shift);
-    if (shift < 1 || shift > 25) {
-        printf("Invalid shift value! Please enter a number between 1 and 25.\n");
-        return 1;
-    }
-    caesarCipher(text, shift);
+    printf("Enter shift value (1-25): ");
+    scanf("%d", &k);
+    caesarCipher(text, k);
     printf("Encrypted message: %s\n", text);
     return 0;
 }
 
 
-OUTPUT: -
-Enter a string to encrypt: HELLO WORLD
-Enter the shift (1-25): 3
-Encrypted message: KHOOR ZRUOG
+OUTPUT:-
+Enter a message: WELCOME TO MY SESSION
+Enter shift value (1-25): 3
+Encrypted message: ZHOFRPH WR PB VHVVLRQ
